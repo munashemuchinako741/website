@@ -57,42 +57,6 @@
         .footer-link:hover {
             color: orange !important;
             transform: scale(1.1);
-        }
-
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn {
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .btn.active {
-            background-color: #0d6efd;
-            color: white;
-        }
-
-        /* Button Animation */
-        .btn-animate {
-            animation: moveUpDown 2s infinite;
-        }
-
-        @keyframes moveUpDown {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
     </style>
     <title>Munashe Muchinako</title>
 </head>
@@ -342,6 +306,40 @@
                     </div>
                 </div>
             </footer>
+
+        <style>
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn.active {
+    background-color: #0d6efd;
+    color: white;
+  }
+  /* Button Animation */
+  .btn-animate {
+    animation: moveUpDown 2s infinite;
+  }
+
+  @keyframes moveUpDown {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
