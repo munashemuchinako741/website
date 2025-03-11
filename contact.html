@@ -112,7 +112,7 @@
                     <div class="row">
                         <!-- Contact Form -->
                         <div class="col-md-6 card-slide">
-                           <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                            <form  id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                              <input type="hidden" name="access_key" value="0a6d1bd9-5bd5-4146-8bf8-bb9d0115b1a8">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name</label>
@@ -134,6 +134,9 @@
                                     <textarea class="form-control" id="message" name="message" rows="5"
                                         placeholder="Enter your message" required></textarea>
                                 </div>
+                                  <!-- Honeypot Spam Protection -->
+                                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary btn-animate">
                                         Send Message
@@ -187,7 +190,7 @@
             </section>
 
             <!-- Modal for Success Message -->
-            <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
+            <div class="modal fade bg-navy" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -285,6 +288,7 @@
 
     <script src="js/script.js"></script>
     <script src="js/form.js"></script>
+
 
     <script type="application/ld+json">
       {
