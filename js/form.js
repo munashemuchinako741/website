@@ -1,38 +1,31 @@
-const form = document.getElementById('contact-form');
-const result = document.getElementById('result');
+// Get the modal and the form
+const successModal = document.getElementById("successModal");
+const contactForm = document.getElementById("contact-form");
 
-form.addEventListener('submit', function(e) {
+// Add an event listener to the form submission
+contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const formData = new FormData(form);
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
-  result.innerHTML = "Please wait..."
 
-    fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(async (response) => {
-            let json = await response.json();
-            if (response.status == 200) {
-                result.innerHTML = "Form submitted successfully";
-            } else {
-                console.log(response);
-                result.innerHTML = json.message;
-            }
-        })
-        .catch(error => {
-            console.log(error);
-            result.innerHTML = "Something went wrong!";
-        })
-        .then(function() {
-            form.reset();
-            setTimeout(() => {
-                result.style.display = "none";
-            }, 3000);
-        });
+  // Get the form data
+  const formData = new FormData(contactForm);
+
+  // Send the form data to the API
+  fetch(contactForm.action, {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // Display the success message in the modal
+      const modalBody = successModal.querySelector(".modal-body");
+      modalBody.textContent =
+        "Thank you for reaching out! Your email has been sent successfully. We'll get back to you soon to discuss further. Have a great day!";
+
+      // Show the modal
+      const modal = new bootstrap.Modal(successModal);
+      modal.show();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 });
