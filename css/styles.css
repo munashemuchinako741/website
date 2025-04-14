@@ -1,10 +1,19 @@
+@font-face {
+    font-family: MTNBrighterSans;
+    src: url(../fonts/MTNBrighterSans-Regular.ttf) format('truetype')
+}
+@media (max-width:768px) {
+    body {
+        font-size: .875rem
+    }
+}
 html,
 body {
   height: 100%;
   margin: 0;
   background-color: #f5f5f5;
-  font-family: "Playfair Display", serif;
-  font-size: 15px;
+  font-family: MTNBrighterSans !important;
+  font-size: 0.90rem;
 }
 /*font-family: "Roboto Condensed", serif;*/
 
