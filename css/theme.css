@@ -1,0 +1,79 @@
+/* Theme styles for light and dark modes */
+
+body.light-theme {
+  background-color: #f9f0f0f3;
+  color: #110f0f;
+}
+.projects.light-theme{
+    background-color: #fbefef;
+  color: #110f0f;
+}
+.projects.light-theme{
+  background-color: #121212;
+  color: #ffffff;
+}
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Navbar overrides for dark and light themes */
+body.light-theme .navbar {
+  background-color: #f8f9fa !important;
+  color: #000000 !important;
+}
+
+body.light-theme .navbar .nav-link,
+body.light-theme .navbar .navbar-brand,
+body.light-theme .navbar .btn {
+  color: #000000 !important;
+}
+
+body.light-theme .navbar .nav-link.active {
+  color: #000000 !important;
+  border-bottom: 2px solid #000000 !important;
+}
+
+body.dark-theme .navbar {
+  background-color: #032b44 !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .navbar .nav-link,
+body.dark-theme .navbar .navbar-brand,
+body.dark-theme .navbar .btn {
+  color: #ffffff !important;
+}
+
+body.dark-theme .navbar .nav-link.active {
+  color: #fff !important;
+  border-bottom: 2px solid #fff !important;
+}
+
+/* Footer overrides for dark and light themes */
+body.light-theme .footer {
+  background-color: #f8f9fa !important;
+  color: #000000 !important;
+}
+
+body.light-theme .footer a,
+body.light-theme .footer h5,
+body.light-theme .footer p {
+  color: #000000 !important;
+}
+
+body.dark-theme .footer {
+  background-color: #032b44 !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .footer a,
+body.dark-theme .footer h5,
+body.dark-theme .footer p {
+  color: #ffffff !important;
+}
+
+/* Button style for theme toggle */
+#themeToggleBtn {
+  border: 1px solid currentColor;
+}

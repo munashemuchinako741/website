@@ -30,7 +30,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.min.css" />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/globals.css" />
+    <link rel="stylesheet" href="./css/styles.min.css" />
+    <link rel="stylesheet" href="css/theme.css" />
     <style>
         .nav-link.active {
       color: #fff !important;
@@ -99,6 +102,11 @@
                     <li class="nav-item"><a class="nav-link" href="projects.html" aria-label="View Munashe's projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html" aria-label="Contact Munashe Muchinako">Contact</a></li>
                     <li class="nav-item"><a class="btn btn-outline-light ms-2" href="docs/MUNASHEMUCHINAKO.pdf" download aria-label="Download Munashe Muchinako's Resume" onclick="ga('send', 'event', 'Download', 'Resume', 'Munashe Muchinako Resume');">Download Resume</a></li>                
+                    <li class="nav-item d-flex align-items-center ms-3">
+                        <button id="themeToggleBtn" class="btn btn-outline-light" aria-label="Toggle theme color">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -109,10 +117,13 @@
                 <div class="container">
                     <h1 class="display-4">Welcome to My Portfolio</h1>
                     <p class="lead">
-                        I'm Munashe Muchinako, a passionate IT student and developer with
-                        expertise in Python programming, web and software development, as well as computer network management
+                        Hi, I'm Munashe Muchinako
+                        Full Stack Developer & ML Enthusiast.
+                        I build modern websites, intelligent web applications, and data-driven solutions.  <br>                      
+                            JavaScript | React | WordPress | Python | FastAPI | MySQL | Php
                     </p>
-                    <a href="about.html" class="btn btn-light btn-lg btn-animate">Learn More</a>
+                    <a href="about.html"><button class="button-1 btn-animate">Read more</button>
+                    </a>
                 </div>
             </section>
 
@@ -127,18 +138,35 @@
                         </div>
                         <div class="col-md-6 slidein">
                             <p class="lead">
-                                Hi, I'm Munashe Muchinako, a B.Tech (Hons) Information Technology
-                                student at Harare Institute of Technology. I specialize in Python,
-                                Django, and web development, with experience in data analysis using
-                                Pandas, NumPy, and Matplotlib.
+                                    I'm a <strong>Full Stack Developer</strong> with a strong foundation in web and software development, and a growing
+                                    specialization in <strong>Machine Learning</strong>.
+                                    I enjoy building powerful, responsive websites and intelligent systems that solve real-world problems.
+                                    <br><br>
+                                    Currently studying Information  Technology, I’ve completed hands-on projects involving Loan default prediction systems, Requisition Management System,
+                                    and e-commerce platforms.
+                                    Beyond code, I’m known for being a clear communicator, a fast learner, and someone who thrives in collaborative
+                                    environments.
+                                    I value teamwork, continuous growth, and turning complex problems into practical solutions.                     </p>
+                                <br>
+                                <b>Tech Stack</b><br>
+                                
+                                <b>Frontend:</b>HTML, CSS, JavaScript, React, Tailwind, Bootstrap
+                                <br>
+                                <b>Backend:</b> FastAPI, Python, Php
+                                <br>
+                                <b>Database:</b> MySQL, MongoDB
+                                <br>
+                                <b>ML Tools:</b> Scikit-Learn, Numpy, Pandas
+                                
+
                             </p>
-                            <p>
-                                I have a strong foundation in computer networking, particularly with
-                                Cisco products, and I'm proficient in HTML, CSS, JavaScript, and SQL.
-                                I'm highly motivated to learn, contribute, and grow in a dynamic
-                                environment.
-                            </p>
-                            <a href="about.html" class="btn btn-primary btn-animate">Read More</a>
+                            <a href="about.html" style="text-decoration:none"><button class="button-2 btn-animate" data-aos="fade-up">Read more<svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            
+                                        <path fill-rule="evenodd"
+                                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    </button></a>
                         </div>
                     </div>
                 </div>
@@ -158,8 +186,14 @@
                                     <p class="card-text">
                                         Projects built with Python, HTML, Javascript, PHP, FASTAPI, Bootstrap and many more.
                                     </p>
-                                    <a href="projects.html?data-filter=web" class="btn btn-primary btn-animate">View
-                                        Projects</a>
+                                    <a href="projects.html?data-filter=web">
+                                        <button class="responsive-green-button btn-animate">
+                                            <div class="button-fill">
+                                                <span class="button-text">View Project</span>
+                                            </div>
+                                            <i class="fas fa-arrow-up button-icon"></i>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -171,8 +205,14 @@
                                     <h3 class="card-title">Data Analysis</h3>
                                     <p class="display-4" id="data-count">0</p>
                                     <p class="card-text">Projects using Python, Matplotlib, NumPy, Pandas, Scikit-learn, Seaborn.</p>
-                                    <a href="projects.html?category=data" class="btn btn-primary btn-animate">View
-                                        Projects</a>
+                                    <a href="projects.html?category=data">
+                                        <button class="responsive-green-button btn-animate">
+                                            <div class="button-fill">
+                                                <span class="button-text">View Project</span>
+                                            </div>
+                                            <i class="fas fa-arrow-up button-icon"></i>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -183,9 +223,16 @@
                                 <div class="card-body">
                                     <h3 class="card-title">Other Projects</h3>
                                     <p class="display-4" id="other-count">0</p>
-                                    <p class="card-text">Miscellaneous projects and experiments.</p>
-                                    <a href="projects.html?category=other" class="btn btn-primary btn-animate">View
-                                        Projects</a>
+                                    <p class="card-text">A collection of diverse experiments, tools, and creative builds beyond the main stacks.
+                                    </p>
+                                    <a href="projects.html?category=other">
+                                        <button class="responsive-green-button btn-animate">
+                                            <div class="button-fill">
+                                                <span class="button-text">View Project</span>
+                                            </div>
+                                            <i class="fas fa-arrow-up button-icon"></i>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +265,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h5>Munashe Muchinako</h5>
-                        <p class="text-body-tertiary">
+                        <p class="text-secondary">
                             A showcase of my work and skills built with static HTML and Bootstrap 5.
                         </p>
                     </div>
