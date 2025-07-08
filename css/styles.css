@@ -16,13 +16,13 @@ body {
   height: 100%;
   margin: 0;
   background-color: #f5f5f5;
-  font-family: MTNBrighterSans !important;
+  font-family: RobotoCondensed !important;
 
 }
 /* Load MTNBrighterSans font */
 @font-face {
-  font-family: 'MTNBrighterSans';
-  src: url('../fonts/MTNBrighterSans-Regular.ttf') format('truetype');
+  font-family: 'RobotoCondensed';
+  src: url('../fonts/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -148,7 +148,12 @@ body {
   transform: translateY(100%);
   animation: slideUp 1s forwards;
 }
-
+.about{
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 @keyframes slideUp {
   to {
     opacity: 1;
@@ -203,6 +208,8 @@ body {
   max-width: 98%;
   margin: 1rem;
   background-color: aliceblue;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .skill {
@@ -231,4 +238,35 @@ label {
   line-height: 20px;
   font-size: 13px;
   border-radius: 10px 0 0 10px;
+}
+
+#experience {
+  margin: 1rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item {
+  margin-bottom: 2rem;
+}
+
+.experience-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.experience-item ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  color: #555;
+}
+
+.light-background{
+  background-color: #f8f9fa; /* Light background color */
+  padding: 5px 5px 5px 5px; /* Padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
