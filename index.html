@@ -116,11 +116,11 @@
             <!-- Hero Section -->
             <section class="bg-dark text-white text-center py-5">
                 <div class="container">
-                    <h1 class="display-4">Welcome to My Portfolio</h1>
-                    <p class="lead">
+                    <h1 class="display-4" id="animated-title">Welcome to My Portfolio</h1>
+                    <p class="lead" id="animated-text">
                         Hi, I'm Munashe Muchinako
                         Full Stack Developer & ML Enthusiast.
-                        I build modern websites, intelligent web applications, and data-driven solutions.  <br>                      
+                        I build modern websites, intelligent web applications, and data-driven solutions.  <br>
                             JavaScript | React | WordPress | Python | FastAPI | MySQL | Php
                     </p>
                     <a href="about.html"><button class="button-1 btn-animate">Read more</button>
@@ -335,45 +335,93 @@
     <script src="js/script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const cards = document.querySelectorAll(".card-slide");
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add("show");
-                }, index * 200);
-            });
+            // Typewriter animation for title
+            const titleElement = document.getElementById('animated-title');
+            const titleText = "Welcome to My Portfolio";
+            let titleIndex = 0;
 
-            const webCounterElement = document.getElementById("web-count");
-            const dataCounterElement = document.getElementById("data-count");
-            const otherCounterElement = document.getElementById("other-count");
-
-            const webTargetCount = 4;
-            const dataTargetCount = 1;
-            const otherTargetCount = 2;
-
-            const animationDuration = 2000;
-            const webIncrement = webTargetCount / (animationDuration / 16);
-            const dataIncrement = dataTargetCount / (animationDuration / 16);
-            const otherIncrement = otherTargetCount / (animationDuration / 16);
-
-            let webCurrent = 0;
-            let dataCurrent = 0;
-            let otherCurrent = 0;
-
-            function animateCounters() {
-                if (webCurrent < webTargetCount) {
-                    webCurrent += webIncrement;
-                    dataCurrent += dataIncrement;
-                    otherCurrent += otherIncrement;
-
-                    webCounterElement.textContent = Math.floor(webCurrent);
-                    dataCounterElement.textContent = Math.floor(dataCurrent);
-                    otherCounterElement.textContent = Math.floor(otherCurrent);
-
-                    requestAnimationFrame(animateCounters);
+            function typeTitle() {
+                if (titleIndex < titleText.length) {
+                    titleElement.textContent += titleText.charAt(titleIndex);
+                    titleIndex++;
+                    setTimeout(typeTitle, 100);
+                } else {
+                    // Start typing the paragraph after title is done
+                    setTimeout(typeParagraph, 500);
                 }
             }
 
-            animateCounters();
+            // Typewriter animation for paragraph
+            const textElement = document.getElementById('animated-text');
+            const fullText = "Hi, I'm Munashe Muchinako\nFull Stack Developer & ML Enthusiast.\nI build modern websites, intelligent web applications, and data-driven solutions.\nJavaScript | React | WordPress | Python | FastAPI | MySQL | Php";
+            const lines = fullText.split('\n');
+            let lineIndex = 0;
+            let charIndex = 0;
+
+            function typeParagraph() {
+                if (lineIndex < lines.length) {
+                    const currentLine = lines[lineIndex];
+                    if (charIndex < currentLine.length) {
+                        textElement.innerHTML += currentLine.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeParagraph, 50);
+                    } else {
+                        // Move to next line
+                        textElement.innerHTML += '<br>';
+                        lineIndex++;
+                        charIndex = 0;
+                        setTimeout(typeParagraph, 300); // Pause between lines
+                    }
+                } else {
+                    // Animation complete, start other animations
+                    startOtherAnimations();
+                }
+            }
+
+            function startOtherAnimations() {
+                const cards = document.querySelectorAll(".card-slide");
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add("show");
+                    }, index * 200);
+                });
+
+                const webCounterElement = document.getElementById("web-count");
+                const dataCounterElement = document.getElementById("data-count");
+                const otherCounterElement = document.getElementById("other-count");
+
+                const webTargetCount = 4;
+                const dataTargetCount = 1;
+                const otherTargetCount = 2;
+
+                const animationDuration = 2000;
+                const webIncrement = webTargetCount / (animationDuration / 16);
+                const dataIncrement = dataTargetCount / (animationDuration / 16);
+                const otherIncrement = otherTargetCount / (animationDuration / 16);
+
+                let webCurrent = 0;
+                let dataCurrent = 0;
+                let otherCurrent = 0;
+
+                function animateCounters() {
+                    if (webCurrent < webTargetCount) {
+                        webCurrent += webIncrement;
+                        dataCurrent += dataIncrement;
+                        otherCurrent += otherIncrement;
+
+                        webCounterElement.textContent = Math.floor(webCurrent);
+                        dataCounterElement.textContent = Math.floor(dataCurrent);
+                        otherCounterElement.textContent = Math.floor(otherCurrent);
+
+                        requestAnimationFrame(animateCounters);
+                    }
+                }
+
+                animateCounters();
+            }
+
+            // Start the typewriter animation
+            typeTitle();
         });
     </script>
 </body>
