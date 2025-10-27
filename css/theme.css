@@ -1,12 +1,17 @@
 /* Theme styles for light and dark modes */
 
-body.light-theme {
-  background-color: #ffffff;
-  color: #000000;
+body {
+  background-image: url('../img/bg-img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body.dark-theme {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background-image: url('../img/bg-dark.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #ffffff;
 }
 
@@ -28,7 +33,7 @@ body.light-theme .navbar .nav-link.active {
 }
 
 body.dark-theme .navbar {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+  background: linear-gradient(135deg, #032b44 0%, #032b44 100%) !important;
   color: #ffffff !important;
 }
 
@@ -56,7 +61,7 @@ body.light-theme .footer p {
 }
 
 body.dark-theme .footer {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+  background: linear-gradient(135deg, #032b44 0%, #032b44 100%) !important;
   color: #ffffff !important;
 }
 

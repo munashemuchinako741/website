@@ -27,14 +27,13 @@ const themeIcon = themeToggleBtn.querySelector("i");
 
 function setTheme(theme) {
   if (theme === "light") {
-    body.classList.add("light-theme");
+    body.classList.remove("light-theme");
     body.classList.remove("dark-theme");
     themeIcon.classList.remove("fa-moon");
     themeIcon.classList.add("fa-sun");
-  } else {
-    // original theme: remove any theme classes
+  } else if (theme === "dark") {
+    body.classList.add("dark-theme");
     body.classList.remove("light-theme");
-    body.classList.remove("dark-theme");
     themeIcon.classList.remove("fa-sun");
     themeIcon.classList.add("fa-moon");
   }
@@ -43,13 +42,13 @@ function setTheme(theme) {
 
 // Initialize theme on page load
 document.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme") || "original";
+  const savedTheme = localStorage.getItem("theme") || "light";
   setTheme(savedTheme);
 });
 
 // Toggle theme on button click
 themeToggleBtn.addEventListener("click", () => {
-  const currentTheme = body.classList.contains("light-theme") ? "light" : "original";
-  const newTheme = currentTheme === "light" ? "original" : "light";
+  const currentTheme = body.classList.contains("dark-theme") ? "dark" : "light";
+  const newTheme = currentTheme === "light" ? "dark" : "light";
   setTheme(newTheme);
 });
