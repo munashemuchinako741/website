@@ -677,6 +677,14 @@
             transform: scale(1.05);
         }
 
+        .project-image--contain img {
+            object-fit: contain;
+        }
+
+        .project-card:hover .project-image--contain img {
+            transform: none;
+        }
+
         .project-status {
             position: absolute;
             top: 16px;
@@ -807,6 +815,42 @@
 
         .project-link:hover {
             transform: translateY(-2px);
+        }
+
+        .project-card--services {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+            gap: 20px;
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .service-item {
+            padding: 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+        }
+
+        .service-item > i {
+            color: var(--accent-primary);
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .service-item h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .service-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
         }
 
         /* ===== TECH STACK ===== */
@@ -1190,7 +1234,7 @@
                     <span class="status-dot"></span>
                     Open to opportunities
                 </div>
-                <a href="../docs/Munashe_Machakwa_CV_2026.pdf" download class="btn btn-primary">
+                <a href="docs/Munashe_Machakwa_CV_2026.pdf" download class="btn btn-primary">
                     <i class="fas fa-download"></i> Resume
                 </a>
             </div>
@@ -1225,7 +1269,7 @@
                 <li><a href="#contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
             <div class="mobile-menu-cta">
-                <a href="../docs/Munashe_Machakwa_CV_2026.pdf" download class="btn btn-primary">
+                <a href="docs/Munashe_Machakwa_CV_2026.pdf" download class="btn btn-primary">
                     <i class="fas fa-download"></i> Download Resume
                 </a>
                 <a href="#contact" class="btn btn-secondary mobile-nav-link">
@@ -1382,7 +1426,7 @@
             <!-- Project 1: The Ridge Event Management Portal -->
             <article class="project-card fade-up">
                 <div class="project-image">
-                    <img src="img/chatbot dashboard.png" alt="The Ridge Event Management Portal" />
+                    <img src="img/theridge.png" alt="The Ridge event portal homepage" />
                     <span class="project-status">
                         <i class="fas fa-circle"></i> Live
                     </span>
@@ -1430,10 +1474,10 @@
                 </div>
             </article>
 
-            <!-- Project 2: AI Loan Default Prediction -->
+            <!-- Project 2: Terri Fleet & Asset Management Platform -->
             <article class="project-card fade-up">
                 <div class="project-image">
-                    <img src="img/loanpred.png" alt="Loan Default Prediction System" />
+                    <img src="img/terri-gps.png" alt="Terri GPS fleet and asset tracking login screen" />
                     <span class="project-status">
                         <i class="fas fa-circle"></i> Live
                     </span>
@@ -1481,10 +1525,10 @@
                 </div>
             </article>
 
-            <!-- Project 3: Requisition Management System -->
+            <!-- Project 3: Odoo Module Development & Customization -->
             <article class="project-card fade-up">
-                <div class="project-image">
-                    <img src="img/project4.png" alt="Requisition Management System" />
+                <div class="project-image project-image--contain">
+                    <img src="img/para-pos-odoo.png" alt="Para Meats POS customisation module in Odoo" />
                     <span class="project-status">
                         <i class="fas fa-circle"></i> Live
                     </span>
@@ -1532,52 +1576,42 @@
                 </div>
             </article>
 
-            <!-- Project 4: POS & Logistics Platform -->
-            <article class="project-card fade-up">
-                <div class="project-image">
-                    <img src="img/project1.png" alt="POS and Logistics Platform" />
-                    <span class="project-status">
-                        <i class="fas fa-circle"></i> Live
-                    </span>
-                </div>
+            <!-- Services: Business Systems & IT Support -->
+            <article class="project-card project-card--services fade-up" aria-labelledby="support-services-title">
                 <div class="project-content">
-                    <span class="project-category">Software Engineering</span>
-                    <h3 class="project-title">Business Systems & IT Support</h3>
+                    <span class="project-category">Services</span>
+                    <h3 class="project-title" id="support-services-title">Business Systems & IT Support</h3>
                     <p class="project-description">
                         Practical software and technical support across websites, administration dashboards,
                         email systems, GPS hardware, IoT devices, and client infrastructure.
                     </p>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <span class="meta-label">Support</span>
-                            <span class="meta-value">Hardware setup, repair and remote troubleshooting</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Infrastructure</span>
-                            <span class="meta-value">SPF, DKIM and DMARC email configuration</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Approach</span>
-                            <span class="meta-value impact">Trace issues through logs, testing and diagnostics</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Tools</span>
-                            <span class="meta-value">AnyDesk, Jira, Docker, Git and Linux</span>
-                        </div>
-                    </div>
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <i class="fas fa-laptop" aria-hidden="true"></i>
+                            <h4>Hardware Support</h4>
+                            <p>Hardware setup and repair, including GPS hardware and IoT devices.</p>
+                        </li>
+                        <li class="service-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <h4>Email Setup</h4>
+                            <p>Email configuration with SPF, DKIM and DMARC for client infrastructure.</p>
+                        </li>
+                        <li class="service-item">
+                            <i class="fas fa-tools" aria-hidden="true"></i>
+                            <h4>Troubleshooting</h4>
+                            <p>Remote support backed by logs, testing and diagnostics to trace issues.</p>
+                        </li>
+                    </ul>
                     <div class="project-tech">
-                        <span class="tech-tag">IT Support</span>
-                        <span class="tech-tag">GPS / IoT</span>
-                        <span class="tech-tag">Linux</span>
-                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">AnyDesk</span>
                         <span class="tech-tag">Jira</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Linux</span>
                     </div>
                     <div class="project-links">
                         <a href="#contact" class="project-link primary">
-                            <i class="fas fa-external-link-alt"></i> View Demo
-                        </a>
-                        <a href="https://github.com/munashemuchinako741" target="_blank" rel="noopener noreferrer" class="project-link secondary">
-                            <i class="fab fa-github"></i> Source
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Request Support
                         </a>
                     </div>
                 </div>
